@@ -26,3 +26,35 @@ function hestia_child_get_lite_options() {
 	}
 }
 add_action( 'after_switch_theme', 'hestia_child_get_lite_options' );
+
+/**
+ * AMz Custom
+ *
+ */
+
+function ti_custom_javascript() {
+	?>
+		<style type="text/css">
+			@media (max-width: 768px){
+				.navbar.navbar-transparent {background: rgba(255, 255, 255, 0.80);}
+			}
+			.navbar-not-transparent{
+				background: rgba(255, 255, 255, 0.80)!important;
+				backdrop-filter: blur(9.3px);
+			}
+			.no-blur{
+				background: #ffffff !important;
+				backdrop-filter: none;   
+			}
+		</style>
+
+		<script>
+			jQuery(function($) {
+				$(".navbar-toggle").on("click", function() {
+					$(".navbar").toggleClass("no-blur");
+				});
+			});
+		</script>
+	<?php
+}
+add_action('wp_head', 'ti_custom_javascript');
