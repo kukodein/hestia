@@ -32,6 +32,7 @@ add_action( 'after_switch_theme', 'hestia_child_get_lite_options' );
  *
  */
 
+/*
 function ti_custom_javascript() {
 	?>
 		<style type="text/css">
@@ -58,3 +59,4 @@ function ti_custom_javascript() {
 	<?php
 }
 add_action('wp_head', 'ti_custom_javascript');
+*/
