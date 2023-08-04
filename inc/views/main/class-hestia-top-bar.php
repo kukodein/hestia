@@ -123,9 +123,9 @@ class Hestia_Top_Bar extends Hestia_Abstract_Main {
 	 */
 	private function top_bar_sidebar_class() {
 		$top_bar_alignment = get_theme_mod( 'hestia_top_bar_alignment', apply_filters( 'hestia_top_bar_alignment_default', 'right' ) );
-		$sidebar_class     = 'pull-left';
+		$sidebar_class = 'pull-right';
 		if ( ! empty( $top_bar_alignment ) && $top_bar_alignment === 'left' ) {
-			$sidebar_class = 'pull-right';
+			$sidebar_class     = 'pull-left';
 		}
 		$sidebar_class .= ' col-md-6';
 		if ( ! has_nav_menu( 'top-bar-menu' ) && ! current_user_can( 'edit_theme_options' ) ) {
@@ -142,9 +142,9 @@ class Hestia_Top_Bar extends Hestia_Abstract_Main {
 	 */
 	private function top_bar_menu_class() {
 		$top_bar_alignment = get_theme_mod( 'hestia_top_bar_alignment', apply_filters( 'hestia_top_bar_alignment_default', 'right' ) );
-		$menu_class        = 'pull-right';
+		$menu_class = 'pull-left';
 		if ( ! empty( $top_bar_alignment ) && $top_bar_alignment === 'left' ) {
-			$menu_class = 'pull-left';
+			$menu_class        = 'pull-right';
 		}
 		if ( is_active_sidebar( 'sidebar-top-bar' ) || $this->top_bar_has_placeholder() ) {
 			$menu_class .= ' col-md-6 top-widgets-placeholder';
