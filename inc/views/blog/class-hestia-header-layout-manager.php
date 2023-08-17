@@ -411,7 +411,18 @@ class Hestia_Header_Layout_Manager extends Hestia_Abstract_Main {
 		if ( ! is_page() ) {
 			$entry_class = 'entry-title';
 		}
-		$header_content_output = '<h1 class="' . esc_attr( $title_class ) . ' ' . esc_attr( $entry_class ) . '">' . wp_kses_post( get_the_title() ) . '</h1>';
+
+		$breadcrumb_value = '';
+
+		# Memeriksa apakah plugin Yoast SEO aktif
+		if ( class_exists('WPSEO_Frontend') ) {
+			# Menampilkan shortcode Yoast
+			// $breadcrumb_value = '<div id="breadcrumbs">' . do_shortcode('[yoast_breadcrumb]') . '</div>';
+			$breadcrumb_value = '<div id="breadcrumbs">' . do_shortcode('[wpseo_breadcrumb]') . '</div>';
+		}
+
+
+		$header_content_output = '<h1 class="' . esc_attr( $title_class ) . ' ' . esc_attr( $entry_class ) . '">' . wp_kses_post( get_the_title() ) . '</h1>' . $breadcrumb_value;
 
 		return $header_content_output;
 	}

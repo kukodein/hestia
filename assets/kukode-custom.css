@@ -96,3 +96,11 @@
 .category-product-content-item p {
 	font-size: 18px;
 }
+
+/* Breadcrumb */
+#primary #breadcrumbs,
+#primary #breadcrumbs a
+{
+	font-size: 18px;
+	color: #fff;
+}
